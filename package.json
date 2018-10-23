@@ -1,15 +1,25 @@
 {
   "name": "tabs-touch",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "基于 Vue 的滑动切换页面和tab(可容纳多个页面,每个页面内容多了滑动卡的话可懒加载每一页内容)",
   "main": "lib/vtabstouch.umd.min.js",
-  "keyword": "tab tabs touch tabs-touch",
+  "keywords": [
+    "vue",
+    "tab",
+    "tabs",
+    "touch",
+    "tabs-touch"
+  ],
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name vtabstouch --dest lib packages/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pengdongliang/tabs-touch"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -23,6 +33,10 @@
     "postcss-px-to-viewport-opt": "0.0.4",
     "vue-template-compiler": "^2.5.17"
   },
+  "bugs": {
+    "url": "https://github.com/pengdongliang/tabs-touch/issues"
+  },
+  "homepage": "https://github.com/pengdongliang/tabs-touch#readme",
   "eslintConfig": {
     "root": true,
     "env": {

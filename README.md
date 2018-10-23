@@ -2,7 +2,7 @@
 
 > 基于Vue的滑动切换页面和tab
 
-[DEMO 演示]
+[DEMO 演示](https://github.com/pengdongliang/tabs-touch)
 
 ## 安装
 
