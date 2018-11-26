@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="main_tabs_touch">
     <!-- Tab切换（高度自适应） -->
-    <div id="tabBox1" class="tabBox flex_1 flex flex_v" style="height: 100%;" v-if="navMsg.length">
+    <div id="tabBox1" class="tabBox flex_1 flex flex_v"  v-if="navMsg.length">
       <div class="tab_container" :style="'height:' + tabHeight + 'px;' + (scrollFixed ? 'position: fixed; top: 0; left: 0; width: 100%;' : '')">
         <div class="nav_tabs_container">
           <div ref="nav_box" class="nav_box">
@@ -58,7 +58,14 @@
 
 <style scoped>
 @import "./assets/common.css";
-
+.main_tabs_touch{
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+}
+.main_tabs_touch > .tabBox{
+  height: 100%;
+}
 /* 页面滑动切换tab start*/
 .tabBox .bd ul {
   padding: 10px;
@@ -89,6 +96,7 @@
   overflow: hidden;
   position: relative;
   border-bottom: 1px solid #eee;
+  background-color: #fff;
 }
 .nav_tabs_container > div {
   position: absolute;
@@ -234,7 +242,7 @@ export default {
     scrollFixed: {
       //是否固定顶部
       type: Boolean,
-      default: true
+      default: false
     },
     navLineWidth: {
       //tab下划线元素宽度

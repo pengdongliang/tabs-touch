@@ -3,7 +3,7 @@
     <!-- <div class="btn_div" :ripple="true">
       click me
     </div> -->
-    <tabs-touch :navMsg="[1,2,3,4]">
+    <tabs-touch :navMsg="[1,2,3]">
       <index-channel-page slot="indexpage"></index-channel-page>
       <index-channel-page slot-scope="otherpage"></index-channel-page>
     </tabs-touch>

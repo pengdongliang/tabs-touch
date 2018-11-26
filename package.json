@@ -1,6 +1,6 @@
 {
   "name": "tabs-touch",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "description": "基于 Vue 的滑动切换页面和tab(可容纳多个页面,每个页面内容多了滑动卡的话可懒加载每一页内容)",
   "main": "lib/vtabstouch.umd.min.js",
   "keywords": [

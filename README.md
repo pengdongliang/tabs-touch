@@ -9,6 +9,9 @@
 ``` bash
 $ npm install tabs-touch -S
 ```
+```
+vue-cli3安装推荐（ vue add tabs-touch ）
+```
 ## 使用
 
 在 `main.js` 文件中引入插件并注册
@@ -23,9 +26,11 @@ Vue.use(tabstouch)
 
 ```js
 <template>
-  <tabs-touch >
-    <组件或者div slot="indexpage"> <!--第一页主页面-->
-    <组件或者div slot-scope="otherpage"> <!--其他页面-->
+  <tabs-touch /*v-if="navMsg.length" navMsg="navMsg"*/>
+    <!--第一页主页面-->
+    <组件或者div slot="indexpage"> 
+    <!--其他页面-->
+    <组件或者div slot-scope="otherpage"> 
   </tabs-touch>
 </template>
 <script>
@@ -49,7 +54,7 @@ Vue.use(tabstouch)
     scrollFixed: {
       //是否固定顶部
       type: Boolean,
-      default: true
+      default: false
     },
     navLineWidth: {
       //tab下划线元素宽度
