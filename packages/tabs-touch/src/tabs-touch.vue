@@ -288,6 +288,7 @@ export default {
       this.$refs.nav_box.scrollLeft =
         this.$refs.nav_box.children[newVal].offsetLeft -
         (document.body.clientWidth - this.navItemWidth) / 2;
+        console.log(this.$refs.nav_box.children[newVal].offsetLeft + "-" + (document.body.clientWidth - this.navItemWidth) / 2 +"="+this.$refs.nav_box.scrollLeft)
     }
   },
   data() {
@@ -318,7 +319,14 @@ export default {
         var hasClass = target.attributes.getNamedItem("ripple");
         var isShowRipple = hasClass !== null && hasClass.nodeValue;
         if (!isShowRipple) return false;
-        target.classList += " btn_nav_tabs"
+        let oldClassList = target.classList
+        let isHasClass = false
+        for(var val in oldClassList) {
+          if(val === "btn_nav_tabs") {
+            isHasClass = true
+          }
+        }
+        !isHasClass !== -1 && target.classList.add("btn_nav_tabs")
         var rect = target.getBoundingClientRect();
         var ripple = target.querySelector(".ripple");
         if (!ripple) {
