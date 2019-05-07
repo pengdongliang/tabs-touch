@@ -11,6 +11,7 @@ module.exports = {
       filename: 'index.html'
     }
   },
+  productionSourceMap: false,
   // 强制内联CSS
   css: {
     extract: false,

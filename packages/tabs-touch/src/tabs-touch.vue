@@ -45,7 +45,7 @@
           </div>
           <div class="con" v-for="(nodeItem, nodeIndex) in navMsg" v-if="nodeIndex > 0" :key="nodeIndex">
             <vue-lazy-component direction="horizontal" :viewport="$parent.$el" style="height: 100%;" class="vue_lazy_container">
-              <slot v-bind:otherpage="nodeItem" v-show="nodeIndex === navIndex || nodeIndex === (navIndex - 1) || nodeIndex === (navIndex + 1)"></slot>
+              <slot v-bind:otherpage="nodeItem" v-if="nodeIndex === navIndex || nodeIndex === (navIndex - 1) || nodeIndex === (navIndex + 1)"></slot>
             </vue-lazy-component>
           </div>
         </div>
@@ -95,7 +95,8 @@
   height: 100%;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid #eee;
+  box-shadow: 0 0 4px #eee;
+  /* border-bottom: 1px solid #eee; */
   background-color: #fff;
 }
 .nav_tabs_container > div {
@@ -158,10 +159,11 @@
   right: 0;
   top: 0;
   width: 100%;
-  height: 88px;
+  height: 100%;
   z-index: 9999;
   background-color: transparent;
   width: 176px;
+  overflow: hidden;
 }
 .ios-arrow-isUp {
   transform: rotateZ(180deg);
@@ -225,6 +227,7 @@
 import Vue from "vue";
 import TouchSlide from "./utils/TouchSlide.js";
 import VueLazyComponent from "@xunlei/vue-lazy-component";
+import { setTimeout } from 'timers';
 Vue.use(VueLazyComponent);
 
 export default {
@@ -350,6 +353,9 @@ export default {
         ripple.style.top = top + "px";
         ripple.style.left = left + "px";
         ripple.classList.add("show");
+        setTimeout(()=> {
+          ripple.classList.remove("show");
+        }, 750)
         return false;
       },
       false
